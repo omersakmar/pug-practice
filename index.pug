@@ -1,0 +1,50 @@
+-
+    const cards = [
+        {
+            name: "Nagihan Uslu",
+            time: "Dün, 13:30'da Gönderdi",
+            userImg: "/src/images/user-pp-1.svg",
+            badgeImg: "/src/images/takim-oyuncusu-badge.svg",
+            badgeTitle: "Takım Oyuncusu",
+            stars: 3,
+            comment: "Gerçek bir takım arkadaşısın. Birlikte çalışmanın çok zevkliydi aynı zamanda farklı açılardan bakmama yardımcı olsun, teşekkür ederim."
+        },
+        {
+            name: "Mehmet Yilmaz",
+            time: "Dün, 13:30'da Gönderdi",
+            userImg: "/src/images/user-pp-2.svg",
+            badgeImg: "/src/images/cesur-badge.svg",
+            badgeTitle: "Cesur",
+            stars: 3,
+            comment: "Aliquam risus mauris, lacinia in finibus vel, maximus eu dui. Phasellus a pharetra magna, nec mattis massa. Maecenas sit amet sem pulvinar."
+        },
+    ]
+
+doctype html
+html(lang="en")
+    head
+        title FAQ
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+    body
+        .juno-main
+            .juno-main-container 
+                h1 Tüm Rozetler 
+                each entry in cards
+                    .juno-card
+                        .juno-card-header
+                            .juno-card-header-left
+                                .juno-card-header-title
+                                    h3 #{entry.name}
+                                .juno-card-header-subtitle
+                                    p #{entry.time}
+                            .juno-card-header-right
+                                .juno-card-header-badge
+                                    img(src=entry.badgeImg)
+                                    p #{entry.badgeTitle}
+                        .juno-card-body
+                            .juno-card-body-stars
+                                each star in [...Array(entry.stars)]
+                                    img(src="/images/star.svg")
+                            .juno-card-body-comment
+                                p #{entry.comment}

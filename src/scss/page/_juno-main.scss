@@ -1,0 +1,13 @@
+.juno-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30rem;
+    &-container {
+        background: #FFFFFF;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }    
+}
