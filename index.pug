@@ -29,7 +29,7 @@ html(lang="en")
     body
         .juno-main
             .juno-main-container 
-                h1 Tüm Rozetler 
+                h1.juno-main-container-all-badges Tüm Rozetler 
                 each entry in cards
                     .juno-card
                         .juno-card-header
@@ -37,15 +37,16 @@ html(lang="en")
                                     img(src=entry.userImg)
                             .juno-card-header-left
                                 .juno-card-header-title
-                                    h3.juno-card-header-title-text #{entry.name}
+                                    p.juno-card-header-title-text #{entry.name}
                                 .juno-card-header-subtitle
                                     p.juno-card-header-subtitle-text #{entry.time}
                         .juno-card-body
                             .juno-card-body-badge
                                 img(src=entry.badgeImg)
                                 .juno-card-body-badge-review 
-                                    p.juno-card-body-badge-review-text #{entry.badgeTitle}
-                                    each star in [...Array(entry.stars)] 
-                                        span.juno-card-body-badge-review-star &#9733
+                                    h2.juno-card-body-badge-review-text #{entry.badgeTitle}
+                                    .juno-card-body-badge-review-stars
+                                        each star in [...Array(entry.stars)]
+                                            span.juno-card-body-badge-review-star &#9733
                             .juno-card-body-comment
                                 p.juno-card-body-comment-text #{entry.comment}

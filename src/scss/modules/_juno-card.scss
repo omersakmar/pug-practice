@@ -5,6 +5,8 @@
     padding: 0.825rem 1rem;
     display: flex;
     flex-direction: column;
+    gap: 1rem;
+    color: $default-text-color;
     &-header {
         display: flex;
         align-items: center;
@@ -21,6 +23,9 @@
                 border-radius: 20px;
             }
         }
+        &-left {
+            font-size: $badge-review-header-text-size;
+        }
     }
     &-body {
         display: flex;
@@ -33,10 +38,16 @@
             &-review {
                 display: flex;
                 flex-direction: column;
-                &-star {
+                &-stars {
                     display: flex;
                 }
+            &-text {
+                font-size: $badge-title-text-size;
             }
+            }
+        }
+        &-comment-text {
+            font-size: $badge-review-text-size;
         }
     }
 }
