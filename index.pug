@@ -33,18 +33,19 @@ html(lang="en")
                 each entry in cards
                     .juno-card
                         .juno-card-header
+                            .juno-card-header-badge
+                                    img(src=entry.userImg)
                             .juno-card-header-left
                                 .juno-card-header-title
-                                    h3 #{entry.name}
+                                    h3.juno-card-header-title-text #{entry.name}
                                 .juno-card-header-subtitle
-                                    p #{entry.time}
-                            .juno-card-header-right
-                                .juno-card-header-badge
-                                    img(src=entry.badgeImg)
-                                    p #{entry.badgeTitle}
+                                    p.juno-card-header-subtitle-text #{entry.time}
                         .juno-card-body
-                            .juno-card-body-stars
-                                each star in [...Array(entry.stars)]
-                                    img(src="/images/star.svg")
+                            .juno-card-body-badge
+                                img(src=entry.badgeImg)
+                                .juno-card-body-badge-review 
+                                    p.juno-card-body-badge-review-text #{entry.badgeTitle}
+                                    each star in [...Array(entry.stars)] 
+                                        span.juno-card-body-badge-review-star &#9733
                             .juno-card-body-comment
-                                p #{entry.comment}
+                                p.juno-card-body-comment-text #{entry.comment}
